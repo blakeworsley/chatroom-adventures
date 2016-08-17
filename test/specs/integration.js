@@ -42,4 +42,32 @@ describe('chatroom adventures app', function () {
     var messageList = browser.getText('article');
     assert.equal(messageList.replace(/\n/g, ", "), 'hello there');
     });
+
+  it('should clear the input field when sent', function() {
+    browser.url('/');
+    var messageInput = browser.element('.message-input-js');
+
+    messageInput.setValue('hello there');
+    browser.click('.send-button-js');
+
+    assert.equal(messageInput.getValue(), '');
+  });
+
+  //Chat messages should be displayed in reverse chronological order.
+  it('should display chat messages in reverse chronological order.', function() {
+    browser.url('/');
+    var messageInput = browser.element('.message-input-js');
+
+    messageInput.setValue('first comment');
+    browser.click('.send-button-js');
+    messageInput.setValue('second comment');
+    browser.click('.send-button-js');
+
+    // var messages = browser.('.message-list-js');
+
+    var messageList = browser.getText('article');
+
+    assert.equal(messageList[0], 'first comment');
+    assert.equal(messageList[1], 'second comment')
+  })
 });
