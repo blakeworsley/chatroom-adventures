@@ -67,7 +67,6 @@ describe('chatroom adventures app', function () {
 
     var messageList = browser.getText('article');
 
-    console.log(messageList)
     assert.equal(messageList[0], 'first comment');
     assert.equal(messageList[1], 'second comment')
   })
