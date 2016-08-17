@@ -7,3 +7,30 @@ describe('webpage interaction', function() {
     assert.equal(title, 'Chatroom Adventures');
   });
 });
+
+describe('our test bundle', function () {
+  it('should work', function () {
+    assert(true);
+  });
+});
+
+describe('chatroom adventures app', function () {
+  it('should have an input field', function () {
+    browser.url('/');
+    var messageInput = browser.element('.message-input-js');
+
+    messageInput.setValue('hello there');
+
+    assert.equal(messageInput.getValue(), 'hello there');
+  });
+  it('should be able to add messages to the page', function () {
+    browser.url('/');
+    var messageInput = browser.element('.message-input-js');
+
+    messageInput.setValue('hello there');
+    browser.click('.send-button-js');
+
+    var messageList = browser.getText('article');
+    assert.equal(messageList.replace(/\n/g, ", "), 'hello there');
+    });
+});

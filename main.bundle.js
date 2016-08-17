@@ -43,17 +43,8 @@
 /******/ ([
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
-
-	var newAlert = __webpack_require__(1);
-	newAlert();
-
-
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
-
-	module.exports = () => {alert('Its a trap!!!!')}
-
-
 /***/ }
 /******/ ]);
