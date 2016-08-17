@@ -23,6 +23,15 @@ describe('chatroom adventures app', function () {
 
     assert.equal(messageInput.getValue(), 'hello there');
   });
+
+  it('should disable button when input is empty', function() {
+   browser.url('/');
+   var messageInput = browser.element('.message-input-js');
+   messageInput.setValue('');
+   var buttonStatus = browser.isEnabled('.send-button-js');
+   assert.equal(buttonStatus, false);
+  });
+
   it('should be able to add messages to the page', function () {
     browser.url('/');
     var messageInput = browser.element('.message-input-js');
