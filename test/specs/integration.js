@@ -42,4 +42,13 @@ describe('chatroom adventures app', function () {
     var messageList = browser.getText('article');
     assert.equal(messageList.replace(/\n/g, ", "), 'hello there');
     });
+  it('should clear the input field when sent', function() {
+    browser.url('/');
+    var messageInput = browser.element('.message-input-js');
+
+    messageInput.setValue('hello there');
+    browser.click('.send-button-js');
+
+    assert.equal(messageInput.getValue(), '');
+  });
 });
