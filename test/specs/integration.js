@@ -32,5 +32,6 @@ describe('chatroom adventures app', function () {
 
     var messageList = browser.getText('article');
     assert.equal(messageList.replace(/\n/g, ", "), 'hello there');
-    });
+  });
+    
 });
