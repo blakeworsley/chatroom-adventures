@@ -1,5 +1,4 @@
 const assert = require('chai').assert;
-const $ = require('jquery');
 
 describe('our test bundle', function () {
   it('should work', function () {
