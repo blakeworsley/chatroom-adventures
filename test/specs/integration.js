@@ -78,24 +78,31 @@ describe('chatroom adventures app', function() {
     messageInput.setValue('human comment');
     browser.click('.send-button-js');
 
-    var messageList = browser.getText('.message-js');
+    var messageList = browser.getText('article');
     assert.equal(messageList[0], 'human comment');
     assert.equal(messageList[1], 'robot comment');
   });
-  it.skip('should delete message from dom when delete button is clicked', function () {
+  it('should have a delete button on each new message', function () {
+    browser.url('/');
+
+    var messageInput = browser.element('.message-input-js');
+
+    messageInput.setValue('human comment');
+    browser.click('.send-button-js');
+    var deleteButton = browser.element('.delete-button-js');
+
+    assert.equal(deleteButton.isExisting(), true);
+
+  });
+  it('should delete message from dom when delete button is clicked', function () {
     browser.url('/');
     var messageInput = browser.element('.message-input-js');
 
     messageInput.setValue('human comment');
     browser.click('.send-button-js');
-
-    var messageList = browser.getText('article');
-    // assert.equal(messageList[0], 'human comment');
-
     browser.click('.delete-button-js');
-
-    var emptyMessageList = ([] === messageList);
-    assert.equal(emptyMessageList, true);
+    var humanMessage = browser.element('.message-js');
+    assert.equal(humanMessage.isExisting(), false);
   });
   it.skip('should not be able to delete other users messages', function() {
     browser.url('/');
