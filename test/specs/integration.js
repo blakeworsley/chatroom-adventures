@@ -29,9 +29,18 @@ describe('chatroom adventures app', function() {
     var messageInput = browser.element('.message-input-js');  
 
     messageInput.setValue('');  
-    var buttonStatus = browser.isEnabled('.send-button-js');
-      
+    var buttonStatus = browser.isEnabled('.send-button-js');  
     assert.equal(buttonStatus, false);
+  });
+
+  it('should have an enabled send button when the input has a value', function() {
+    browser.url('/');  
+    var messageInput = browser.element('.message-input-js');  
+
+    messageInput.setValue('a');  
+
+    var buttonStatus = browser.isEnabled('.send-button-js');
+    assert.equal(buttonStatus, true);
   });
 
   it('should be able to add messages to the page', function() {
@@ -82,7 +91,8 @@ describe('chatroom adventures app', function() {
     assert.equal(messageList[0], 'human comment');
     assert.equal(messageList[1], 'robot comment');
   });
-  it('should have a delete button on each new message', function () {
+
+  it('should have a delete button on each new message', function() {
     browser.url('/');
 
     var messageInput = browser.element('.message-input-js');
@@ -94,7 +104,8 @@ describe('chatroom adventures app', function() {
     assert.equal(deleteButton.isExisting(), true);
 
   });
-  it('should delete message from dom when delete button is clicked', function () {
+
+  it('should delete message from dom when delete button is clicked', function() {
     browser.url('/');
     var messageInput = browser.element('.message-input-js');
 
@@ -104,7 +115,9 @@ describe('chatroom adventures app', function() {
     var humanMessage = browser.element('.message-js');
     assert.equal(humanMessage.isExisting(), false);
   });
+
   it.skip('should not be able to delete other users messages', function() {
     browser.url('/');
   });
+
 });

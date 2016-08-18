@@ -1,11 +1,5 @@
 const assert = require('chai').assert;
-<<<<<<< HEAD
-=======
-const $ = require('jquery');
-// const Message = require('./lib/index.js');
-// const Messages = require('./lib/index.js');
-
->>>>>>> master
+const Messages = require('../../lib/index');
 
 describe('our test bundle', function () {
   it('should work', function () {
