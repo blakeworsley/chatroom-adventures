@@ -116,8 +116,33 @@ describe('chatroom adventures app', function() {
     assert.equal(humanMessage.isExisting(), false);
   });
 
-  it.skip('should not be able to delete other users messages', function() {
+  it('should have unique styles for each user', function() {
     browser.url('/');
+    var messageInput = browser.element('.message-input-js');
+
+    messageInput.setValue('first comment');
+    browser.click('.send-button-js');
+
+    var userMessage = browser.getCssProperty('.message-js', 'background-color');
+    var robotMessage = browser.getCssProperty('.robot-message-js', 'background-color');
+    assert.notEqual(userMessage, robotMessage, true);
   });
 
+  it.skip('should allow each user to edit their own message', function() {
+    browser.url('/');
+    var messageInput = browser.element('.message-input-js');
+
+    messageInput.setValue('first comment');
+    browser.click('.send-button-js');
+    browser.click('.message-js');
+
+    var newMessageInput = browser.element('.user-message');
+    // newMessageInput.setValue('');
+
+    newMessageInput.setValue('new comment');
+    browser.click(messageInput);
+    console.log(newMessageInput);
+
+    assert.equal(newMessageInput.getValue(), 'new comment');
+  });
 });
