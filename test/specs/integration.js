@@ -66,7 +66,7 @@ describe('chatroom adventures app', function() {
 
 
   it('should display chat messages in reverse chronological order', function() {
-    browser.url('/');
+    // browser.url('/');
     var messageInput = browser.element('.message-input-js');
 
     messageInput.setValue('first comment');

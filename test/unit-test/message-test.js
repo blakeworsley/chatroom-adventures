@@ -1,6 +1,6 @@
 const assert = require('chai').assert;
-const Messages = require('../../lib/index');
-const Message = require('../../lib/index');
+const Messages = require('../../lib/messages');
+const Message = require('../../lib/message');
 
 describe('our test bundle', function () {
   it('should work', function () {
@@ -10,7 +10,7 @@ describe('our test bundle', function () {
 
 describe('the message list', function () {
   it('should be an object', function () {
-    var messageList = new Messages();
+    var messageList = Messages;
     assert.isObject(messageList);
   });
 });
