@@ -136,21 +136,26 @@ describe('chatroom adventures app', function() {
     assert.notEqual(userMessage, robotMessage, true);
   });
 
-  it.skip('should allow each user to edit their own message', function() {
+  it('should allow each user to edit their own message', function() {
     browser.url('/');
     var messageInput = browser.element('.message-input-js');
 
     messageInput.setValue('first comment');
     browser.click('.send-button-js');
-    browser.click('.message-js');
-
+    browser.click('.user-message');
     var newMessageInput = browser.element('.user-message');
-    // newMessageInput.setValue('');
-
     newMessageInput.setValue('new comment');
-    browser.click(messageInput);
-    console.log(newMessageInput);
 
-    assert.equal(newMessageInput.getValue(), 'new comment');
+    assert.equal(newMessageInput.getText(), 'new comment');
+  });
+
+  it('should modify the count figure on keyup', function() {
+    browser.url('/');
+    var messageInput = browser.element('.message-input-js');
+
+    messageInput.setValue('yes');
+
+    var characterCount = browser.getText('.char-count-js');
+    assert.equal(characterCount, '3');
   });
 });
