@@ -66,7 +66,7 @@ describe('chatroom adventures app', function() {
 
 
   it('should display chat messages in reverse chronological order', function() {
-    // browser.url('/');
+    browser.url('/');
     var messageInput = browser.element('.message-input-js');
 
     messageInput.setValue('first comment');
@@ -75,12 +75,14 @@ describe('chatroom adventures app', function() {
     browser.click('.send-button-js');
 
     var messageList = browser.getText('article');
+    var arrayLength = messageList.length - 4;
+    var arrayLength2 = messageList.length - 2;
 
-    assert.equal(messageList[0], 'first comment');
-    assert.equal(messageList[2], 'second comment');
+    assert.equal(messageList[arrayLength], 'first comment');
+    assert.equal(messageList[arrayLength2], 'second comment');
   });
 
-  it('should have create a new message from a robot after every sent message', function() {
+  it('should create a new message from a robot after every sent message', function() {
     browser.url('/');
     var messageInput = browser.element('.message-input-js');
 
@@ -88,8 +90,11 @@ describe('chatroom adventures app', function() {
     browser.click('.send-button-js');
 
     var messageList = browser.getText('article');
-    assert.equal(messageList[0], 'human comment');
-    assert.equal(messageList[1], 'robot comment');
+    var arrayLength = messageList.length - 2;
+    var arrayLength2 = messageList.length - 1;
+
+    assert.equal(messageList[arrayLength], 'human comment');
+    assert.equal(messageList[arrayLength2], 'robot comment');
   });
 
   it('should have a delete button on each new message', function() {
@@ -111,9 +116,12 @@ describe('chatroom adventures app', function() {
 
     messageInput.setValue('human comment');
     browser.click('.send-button-js');
+    var messageList1 = browser.getText('article');
+    var arrayLength1 = messageList1.length;
     browser.click('.delete-button-js');
-    var humanMessage = browser.element('.message-js');
-    assert.equal(humanMessage.isExisting(), false);
+    var messageList2 = browser.getText('article');
+    var arrayLength2 = messageList2.length;
+    assert.notEqual(arrayLength1, arrayLength2, true);
   });
 
   it('should have unique styles for each user', function() {
@@ -128,21 +136,26 @@ describe('chatroom adventures app', function() {
     assert.notEqual(userMessage, robotMessage, true);
   });
 
-  it.skip('should allow each user to edit their own message', function() {
+  it('should allow each user to edit their own message', function() {
     browser.url('/');
     var messageInput = browser.element('.message-input-js');
 
     messageInput.setValue('first comment');
     browser.click('.send-button-js');
-    browser.click('.message-js');
-
+    browser.click('.user-message');
     var newMessageInput = browser.element('.user-message');
-    // newMessageInput.setValue('');
-
     newMessageInput.setValue('new comment');
-    browser.click(messageInput);
-    console.log(newMessageInput);
 
-    assert.equal(newMessageInput.getValue(), 'new comment');
+    assert.equal(newMessageInput.getText(), 'new comment');
+  });
+
+  it('should modify the count figure on keyup', function() {
+    browser.url('/');
+    var messageInput = browser.element('.message-input-js');
+
+    messageInput.setValue('yes');
+
+    var characterCount = browser.getText('.char-count-js');
+    assert.equal(characterCount, '3');
   });
 });
