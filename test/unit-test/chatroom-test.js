@@ -1,5 +1,4 @@
 const assert = require('chai').assert;
-// const $ = require('../../jquery');
 const Messages = require('../../lib/messages');
 const Message = require('../../lib/message');
 const clearInputField = require('../../lib/chatroom');
