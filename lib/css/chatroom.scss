@@ -1,0 +1,80 @@
+// layout
+$brightest-color: white;
+$light-color: #F4F4F4;
+
+
+
+body {
+  background-color: $light-color;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.all-messages-container {
+  height: 80vh;
+  margin-bottom: 170px;
+}
+
+
+//buttons
+$softer-desaturated-color: #9B9B9B;
+
+button {
+
+}
+
+footer {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 40px;
+  background: $brightest-color;
+  position: fixed;
+  bottom: 0;
+}
+
+
+
+
+
+// users
+$messages-font: Lato-Italic;
+$messages-font-size: 1em;
+
+$robot-font-color: white;
+$robot-background-color: #FF6666;
+
+$user-font-color: black;
+$medium-dark-text: #4A4A4A;
+
+
+
+.message-container {
+  font-family: $messages-font;
+  font-size: $messages-font-size;
+  width: 80%;
+  padding: .4em;
+  margin: .4em;
+}
+
+.user-message-container {
+  color: $user-font-color;
+  background: #B1F0E1;
+  border-radius: 10px;
+  float: right;
+}
+
+.robot-message-container {
+  color: $robot-font-color;
+  background: $robot-background-color;
+  border-radius: 10px;
+  float: left;
+}
+
+.user-message {
+  font-family: $messages-font;
+  font-size: $messages-font-size;
+  color: $medium-dark-text;
+}
