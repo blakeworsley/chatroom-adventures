@@ -6,11 +6,15 @@
   <title>Chatroom Adventures</title>
 </head>
 <body>
-  <input type="text" class="message-input-js message-input">
-  <button type="button" class="send-button-js send-button" disabled>Send</button>
-  <p>Number of characters: <span class="char-count-js"></span></p>
-  <button class='more-messages-js'>Show 10 More Messages</button>
-  <section class="message-list-js"></section>
+  <section class="all-messages-container">
+    <button class='more-messages-js'>Show 10 More Messages</button>
+    <section class="message-list-js"></section>
+  </section>
+  <footer>
+    <input type="text" class="message-input-js message-input">
+    <button type="button" class="send-button-js send-button" disabled>Send</button>
+    <p>Number of characters: <span class="char-count-js"></span></p>
+  </footer>
 
   <script src="main.bundle.js"></script>
   <script src="jquery.js"></script>
