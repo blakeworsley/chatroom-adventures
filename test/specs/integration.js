@@ -158,4 +158,23 @@ describe('chatroom adventures app', function() {
     var characterCount = browser.getText('.char-count-js');
     assert.equal(characterCount, '3');
   });
+
+  it('should only show the first 10 messages on load', function() {
+    browser.url('/');
+    var messageInput = browser.element('.message-input-js');
+
+    for (var i = 0; i < 15; i++) {
+      messageInput.setValue('hello there' + [i] + '');
+      browser.click('.send-button-js');
+    };
+
+    var messageList = browser.getText('article');
+    var arrayLength = messageList.length;
+
+    assert.equal((arrayLength < 11, true));
+  });
+
+  it.skip('should have a link that shows the next 10 messages', function() {
+
+  });
 });
