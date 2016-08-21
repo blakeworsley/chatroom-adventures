@@ -1,4 +1,5 @@
 const assert = require('chai').assert;
+// const $ = require('../../jquery');
 const Messages = require('../../lib/messages');
 const Message = require('../../lib/message');
 
@@ -10,8 +11,8 @@ describe('our test bundle', function () {
 
 describe('the message list', function () {
   it('should be an object', function () {
-    var messageList = Messages;
-    assert.isObject(messageList);
+    var messages = Messages;
+    assert.isObject(messages);
   });
 });
 
@@ -21,13 +22,53 @@ describe('a message', function() {
     assert.isObject(message);
   });
 
-  it('can be edittable', function() {
+  it.skip('can increase the amountOfMessagesToShow ', function() {
+    var messages = Messages;
+    var amountOfMessagesShown = 10;
+    Messages.amountOfMessagesToShow();
+    // assert.equal(Messages.amountOfMessagesShown, 20;)
+  });
+
+  it.skip('can findLast10Messages', function() {
+    var messages = Messages;
+    var allMessages = [];
+    Messages.allMessages.length = 20;
+    Messages.findLast10Messages();
+    assert.equal
+  });
+
+  it.skip('can be ', function() {
 
   });
 
-  it('can be deleted', function() {
+  it.skip('can be ', function() {
 
   });
+
+  it.skip('can be ', function() {
+
+  });
+
+  it.skip('can be ', function() {
+
+  });
+
+  it.skip('can be ', function() {
+
+  });
+
+  it.skip('can be ', function() {
+
+  });
+
+  it.skip('can be ', function() {
+
+  });
+
+  it.skip('can be ', function() {
+
+  });
+
 });
 
 
