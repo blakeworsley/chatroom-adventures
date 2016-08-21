@@ -22,65 +22,24 @@ describe('a message', function() {
     assert.isObject(message);
   });
 
-  it.skip('can increase the amountOfMessagesToShow ', function() {
+  it('should increase the amountOfMessagesToShow ', function() {
     var messages = Messages;
     var amountOfMessagesShown = 10;
-    Messages.amountOfMessagesToShow();
-    // assert.equal(Messages.amountOfMessagesShown, 20;)
+    messages.amountOfMessagesToShow();
+    assert.equal(messages.amountOfMessagesShown, 20);
   });
 
   it.skip('can findLast10Messages', function() {
     var messages = Messages;
-    var allMessages = [];
-    Messages.allMessages.length = 20;
-    Messages.findLast10Messages();
-    assert.equal
+    var allMessages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+    var last10Messages = [];
+    messages.store();
+    messages.findLast10Messages();
+    assert.equal(messages.last10Messages.length, 10);
   });
 
-  it.skip('can be ', function() {
-
-  });
-
-  it.skip('can be ', function() {
-
-  });
-
-  it.skip('can be ', function() {
-
-  });
-
-  it.skip('can be ', function() {
-
-  });
-
-  it.skip('can be ', function() {
-
-  });
-
-  it.skip('can be ', function() {
-
-  });
-
-  it.skip('can be ', function() {
-
-  });
-
-  it.skip('can be ', function() {
+  it.skip('can getStored', function() {
 
   });
 
 });
-
-
-// it('should save a new message to message list'), function() {
-//   var message = new Message(user, text, id, classes)
-//   var messageList = new MessageList
-//   create the message
-//   create message list
-//   call function that adds message to list
-//   assert that list has message
-// }
-
-// test that a message is constructed with the stuff
-// message.saveMessage(message), my message is now in a message array
-// create a messageList object that is constructed with an array
