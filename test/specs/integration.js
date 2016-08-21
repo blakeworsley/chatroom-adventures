@@ -171,10 +171,10 @@ describe('chatroom adventures app', function() {
     var messageList = browser.getText('article');
     var arrayLength = messageList.length;
 
-    assert.equal((arrayLength < 11, true));
+    assert.equal((arrayLength < 11), true);
   });
 
   it.skip('should have a link that shows the next 10 messages', function() {
-
+    
   });
 });
