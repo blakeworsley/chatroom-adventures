@@ -38,8 +38,10 @@
 .user-message-container:hover {
   background-image: $user-base-color-gradient-hover;
   color: $user-dark-text-hover;
-  font-size: $messages-font-size-hover;
 }
 .user-message:focus + .delete-button {
-  color: $user-dark-text;
+  display: inherit;
+  color: $softer-desaturated-color;
+  font-size: $smaller-font-size;
+  font-style: italic;
 }

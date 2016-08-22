@@ -58,11 +58,12 @@ footer {
 }
 .delete-button {
   color: $user-base-color;
+  font-size: $smaller-font-size;
+  font-style: italic;
   transition: all 0.2s ease;
-  float: right;
 }
 .delete-button:before {
-  content: "x";
+  content: "delete";
 }
 .more-messages {
   margin: 1em;
