@@ -1,0 +1,45 @@
+// users
+.message-container {
+  font-family: $messages-font;
+  font-size: $messages-font-size;
+  width: 75%;
+  line-height: 1.5em;
+  padding: 0.6em 1em;
+  margin: 0.6em;
+  transition: all 0.1s ease;
+}
+.user-message-container {
+  color: $user-dark-text;
+  background: $user-base-color;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+}
+.robot-message-container {
+  color: $robot-font-color;
+  background: $robot-base-color;
+  border-radius: 10px;
+  display: flex;
+  margin-right: auto;
+}
+.user-message {
+  font-family: $messages-font;
+  font-size: $messages-font-size;
+  color: $user-dark-text;
+}
+//hover and focus events
+.user-message:focus {
+  outline-width: 0;
+  color: $user-dark-text-selected;
+}
+.delete-button:hover {
+  color: $user-dark-text-selected !important;
+}
+.user-message-container:hover {
+  background-image: $user-base-color-gradient-hover;
+  color: $user-dark-text-hover;
+  font-size: $messages-font-size-hover;
+}
+.user-message:focus + .delete-button {
+  color: $user-dark-text;
+}
