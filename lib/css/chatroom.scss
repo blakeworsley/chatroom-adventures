@@ -58,11 +58,10 @@ footer {
 .delete-button {
   color: $user-base-color;
   transition: all 0.2s ease;
-  width: 15px;
-  height: 15px;
   border-radius: 50px;
-  background-color: black;
-  // background-image: url("../img/delete.png");
+}
+.delete-button:before {
+  content: "x";
 }
 .more-messages {
   margin: 1em;
