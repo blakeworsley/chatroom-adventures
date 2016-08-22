@@ -1,80 +1,82 @@
 // layout
-$brightest-color: white;
-$light-color: #F4F4F4;
-
-
-
 body {
   background-color: $light-color;
-  display: flex;
-  flex-direction: column;
   height: 100vh;
   width: 100vw;
 }
-
 .all-messages-container {
-  height: 80vh;
-  margin-bottom: 170px;
+  display: flex;
+  flex-direction: column;
 }
-
-
-//buttons
-$softer-desaturated-color: #9B9B9B;
-
-button {
-
+.message-input-buffer {
+  height: 100px;
 }
-
+// Message Input
 footer {
   display: flex;
-  align-items: flex-end;
-  width: 100%;
-  min-height: 40px;
-  background: $brightest-color;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100px;
+  background-color: $brightest-color;
   position: fixed;
   bottom: 0;
 }
-
-
-
-
-
-// users
-$messages-font: Lato-Italic;
-$messages-font-size: 1em;
-
-$robot-font-color: white;
-$robot-background-color: #FF6666;
-
-$user-font-color: black;
-$medium-dark-text: #4A4A4A;
-
-
-
-.message-container {
+.message-input {
+  border: none;
+  resize: none;
+  margin: 1em;
+  width: 80vw;
   font-family: $messages-font;
+  color: $user-dark-text;
   font-size: $messages-font-size;
-  width: 80%;
-  padding: .4em;
-  margin: .4em;
 }
-
-.user-message-container {
-  color: $user-font-color;
-  background: #B1F0E1;
-  border-radius: 10px;
-  float: right;
+.send-button-section {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
 }
-
-.robot-message-container {
-  color: $robot-font-color;
-  background: $robot-background-color;
-  border-radius: 10px;
-  float: left;
-}
-
-.user-message {
+.char-count {
+  text-align: center;
+  z-index: 1;
   font-family: $messages-font;
-  font-size: $messages-font-size;
-  color: $medium-dark-text;
+  color: $softer-desaturated-color;
+  min-width: 100%;
+}
+//buttons
+.send-button {
+  background-color: $user-base-color;
+  font-family: $messages-font;
+  color: $user-dark-text;
+  height: 30px;
+  border-radius: 10px;
+  padding: 0.4em 0.7em;
+  margin: 0.4em;
+  transition: all 0.2s ease;
+}
+.delete-button {
+  color: $user-base-color;
+  transition: all 0.2s ease;
+}
+.more-messages {
+  margin: 1em;
+  font-family: $messages-font;
+  font-size: $smaller-font-size;
+  color: $softer-desaturated-color;
+  padding: 0.6em 1em;
+  margin: 0.6em;
+  transition: all 0.2s ease;
+}
+//Inputs
+.message-input:focus {
+  outline-width: 0;
+  border-bottom: 1px solid $softer-desaturated-color;
+}
+.send-button:hover {
+  background-color: $user-base-color-hover;
+  color: $user-dark-text-hover;
+}
+.more-messages:hover {
+  color: $user-dark-text;
 }

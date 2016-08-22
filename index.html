@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Chatroom Adventures</title>
 </head>
+
 <body>
   <section class="all-messages-container">
-    <button class='more-messages-js'>Show 10 More Messages</button>
+    <button class='more-messages-js more-messages'>Show 10 More Messages</button>
     <section class="message-list-js"></section>
+    <div class="message-input-buffer" role="presentation"></div>
   </section>
   <footer>
-    <input type="text" class="message-input-js message-input">
-    <button type="button" class="send-button-js send-button" disabled>Send</button>
-    <p>Number of characters: <span class="char-count-js"></span></p>
+    <textarea type="text" class="message-input-js message-input" placeholder="Type message here."></textarea>
+    <section class="send-button-section">
+      <button type="button" class="send-button-js send-button" disabled>Send</button>
+      <p class="char-count-js char-count"></p>
+    </section>
   </footer>
 
   <script src="main.bundle.js"></script>
   <script src="jquery.js"></script>
 </body>
+
 </html>
