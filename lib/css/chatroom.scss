@@ -58,7 +58,6 @@ footer {
 .delete-button {
   color: $user-base-color;
   transition: all 0.2s ease;
-  border-radius: 50px;
 }
 .delete-button:before {
   content: "x";
