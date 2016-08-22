@@ -61,7 +61,7 @@ footer {
 .delete-button {
   color: $user-base-color;
   transition: all 0.2s ease;
-  display: inline-block;
+  float: right;
 }
 .delete-button:before {
   content: "x";
