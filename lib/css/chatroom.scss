@@ -11,6 +11,9 @@ body {
 .message-input-buffer {
   height: 100px;
 }
+.message-list {
+ margin-bottom: 125px;
+}
 
 footer {
   display: flex;
@@ -75,6 +78,9 @@ footer {
 .message-input:focus {
   outline-width: 0;
   border-bottom: 1px solid $softer-desaturated-color;
+}
+.send-button:disabled {
+  color: $softer-desaturated-color;
 }
 .send-button:hover {
   background-color: $user-base-color-hover;
