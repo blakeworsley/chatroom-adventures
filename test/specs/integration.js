@@ -166,7 +166,7 @@ describe('chatroom adventures app', function() {
     for (var i = 0; i < 15; i++) {
       messageInput.setValue('hello there' + [i] + '');
       browser.click('.send-button-js');
-    };
+    }
 
     var messageList = browser.getText('article');
     var arrayLength = messageList.length;
@@ -181,7 +181,7 @@ describe('chatroom adventures app', function() {
     for (var i = 0; i < 25; i++) {
       messageInput.setValue('hello there' + [i] + '');
       browser.click('.send-button-js');
-    };
+    }
 
     browser.click('.more-messages-js');
 
