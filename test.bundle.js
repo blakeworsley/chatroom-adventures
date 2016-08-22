@@ -316,8 +316,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/kylemisencik/Desktop/Turing/chatroom-adventures/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/kylemisencik/Desktop/Turing/chatroom-adventures/node_modules/mocha/mocha.css", function() {
-			var newContent = require("!!/Users/kylemisencik/Desktop/Turing/chatroom-adventures/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/kylemisencik/Desktop/Turing/chatroom-adventures/node_modules/mocha/mocha.css");
+		module.hot.accept("!!/Users/blakeworsley/turing/mod-2/projects/chatroom-adventures/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/blakeworsley/turing/mod-2/projects/chatroom-adventures/node_modules/mocha/mocha.css", function() {
+			var newContent = require("!!/Users/blakeworsley/turing/mod-2/projects/chatroom-adventures/node_modules/mocha-loader/node_modules/css-loader/index.js!/Users/blakeworsley/turing/mod-2/projects/chatroom-adventures/node_modules/mocha/mocha.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -627,11 +627,6 @@
 	    messages.findLast10Messages();
 	    assert.equal(messages.last10Messages.length, 10);
 	  });
-
-	  it.skip('can getStored', function() {
-
-	  });
-
 	});
 
 
@@ -8725,10 +8720,6 @@
 	    messageInput.val('Starched peanut');
 	    clearInputField();
 	    assert.equal(messageInput.val(''), true);
-	  });
-
-	  it.skip('should enableSendButton', function() {
-
 	  });
 	});
 
