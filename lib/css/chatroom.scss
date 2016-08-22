@@ -61,6 +61,7 @@ footer {
 .delete-button {
   color: $user-base-color;
   transition: all 0.2s ease;
+  display: inline-block;
 }
 .delete-button:before {
   content: "x";
@@ -84,7 +85,6 @@ footer {
 }
 .send-button:hover {
   background-color: $user-base-color-hover;
-  color: $user-dark-text-hover;
 }
 .more-messages:hover {
   color: $user-dark-text;
