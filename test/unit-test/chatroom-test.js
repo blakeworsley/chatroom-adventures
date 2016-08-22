@@ -10,8 +10,4 @@ describe('the chatroom', function () {
     clearInputField();
     assert.equal(messageInput.val(''), true);
   });
-
-  it.skip('should enableSendButton', function() {
-
-  });
 });

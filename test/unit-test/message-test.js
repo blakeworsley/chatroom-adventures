@@ -37,9 +37,4 @@ describe('a message', function() {
     messages.findLast10Messages();
     assert.equal(messages.last10Messages.length, 10);
   });
-
-  it.skip('can getStored', function() {
-
-  });
-
 });
